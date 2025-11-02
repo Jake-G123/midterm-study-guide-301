@@ -79,8 +79,8 @@ public class Practice {
     public static int oddEvenDif(HashMap<Character, Integer> nums) {
         int evenCount = 0;
         int oddCOunt = 0;
-        for (HashMap.Entry<Character, Integer> num : nums.entrySet()) {
-            if (num.getValue() % 2 != 0) {
+        for (HashMap.Entry<Character, Integer> entry : nums.entrySet()) {
+            if (entry.getValue() % 2 != 0) {
                 oddCOunt++;
             } else {
                 evenCount++;
@@ -99,12 +99,12 @@ public class Practice {
     public static int secondLargest(HashMap<Integer, String> nums) {
         int largest = 0;
         int secondLargest = 0;
-        for (HashMap.Entry<Integer, String> num : nums.entrySet()) {
-            if (num.getKey() > largest) {
+        for (Integer key : nums.keySet()) {
+            if (key > largest) {
                 secondLargest=largest;
-                largest=num.getKey();
-            } else if (num.getKey() > secondLargest) {
-                secondLargest=num.getKey();
+                largest=key;
+            } else if (key > secondLargest) {
+                secondLargest=key;
             }
         }
         return secondLargest;
