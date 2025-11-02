@@ -24,6 +24,7 @@ public class Practice {
         }
         return max-min;
     }
+    //O(n) n = nums[] length
 
 
     // TODO: Implement the other methods from the study guide AND tests for each one
@@ -32,8 +33,13 @@ public class Practice {
     // structures. But use a different data structure for each method. For example,
     // do maxDiff with an array, the next question with a Set, etc.
 
-    //Find the longest word that starts with a specific character letter in
-
+    /**
+     * Finds the longest word that starts with a specific character letter in the ArrayList.
+     * 
+     * @param words a non-empty, non-null array list of Strings
+     * @param letter the non-null specific starting letter to sort by
+     * @return longest word that starts with specified character
+     */
     public static String longestWord(ArrayList<String> words, char letter) {
         String longest = "";
         for (String word : words) {
@@ -43,9 +49,16 @@ public class Practice {
         }
         return longest;
     }
+    // O(n) n = words length
 
-    //Count how many words are longer than n characters and shorter than m characters in
-
+    /**
+     * Counts how many words are longer than n characters and shorter than m characters in the HashSet.
+     * 
+     * @param words a non-empty, non-null HashSet of Strings
+     * @param n the non-null longer than sorting number
+     * @param m the non-null shorter than sorting number
+     * @return the count of words that have the correct length
+     */
     public static int longerAndShorter(HashSet<String> words, int n, int m) {
         int count=0;
         for (String word : words) {
@@ -55,13 +68,18 @@ public class Practice {
         }
         return count;
     }
+    // O(n) n = words length
 
-    //Find the difference between the how many odd and even numbers there are in:
-
-    public static int oddEvenDif(HashMap<String, Integer> nums) {
+    /**
+     * Finds the difference between how many odd and even numbers there are in the HashMap.
+     * 
+     * @param nums a non-empty, non-null HashMap with letter keys and number values
+     * @return the difference between the odd and even number value counts
+     */
+    public static int oddEvenDif(HashMap<Character, Integer> nums) {
         int evenCount = 0;
         int oddCOunt = 0;
-        for (HashMap.Entry<String, Integer> num : nums.entrySet()) {
+        for (HashMap.Entry<Character, Integer> num : nums.entrySet()) {
             if (num.getValue() % 2 != 0) {
                 oddCOunt++;
             } else {
@@ -70,9 +88,14 @@ public class Practice {
         }
         return (Math.abs(evenCount-oddCOunt));
     }
+    // O(n) n = nums length
 
-    // Find the second-largest number in:
-
+    /**
+     * Finds the second-largest number in the HashMap.
+     * 
+     * @param nums a non-empty, non-null HashMap with number keys and word values
+     * @return the the second largest HashMap key
+     */
     public static int secondLargest(HashMap<Integer, String> nums) {
         int largest = 0;
         int secondLargest = 0;
@@ -86,4 +109,5 @@ public class Practice {
         }
         return secondLargest;
     }
+    // O(n) n = nums length
 }
