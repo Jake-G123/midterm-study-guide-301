@@ -23,6 +23,18 @@ public class PracticeTest {
         assertEquals(14, actual);
     }
     @Test
+    void testMaxDiffOneValue() {
+        // Arrange
+        int[] numbers = {8};
+
+        // Act
+        int actual = Practice.maxDiff(numbers);
+
+        // Assert
+        // Largest: 8, Smallest: 8, Difference: 9 - 8 = 0
+        assertEquals(0, actual);
+    }
+    @Test
     void testlongestWordNoneWithStartingLetter() {
         // Arrange
         char letter = 'z';
@@ -39,7 +51,23 @@ public class PracticeTest {
         assertEquals("", actual);
     }
     @Test
-    void testlongerAndShorterNoneLongerAndShorter() {
+    void testlongestWordOneCharacterLong() {
+        // Arrange
+        char letter = 'a';
+        ArrayList<String> words = new ArrayList<>();
+        words.add("a");
+        words.add("b");
+        words.add("c");
+
+        // Act
+        String actual = Practice.longestWord(words, letter);
+
+        // Assert
+        // "a" starts with 'a', "a"
+        assertEquals("a", actual);
+    }
+    @Test
+    void testlongerAndShorterSameValueForLongerAndShorter() {
         // Arrange
         HashSet<String> words = new HashSet<>();
         words.add("apple");
@@ -56,6 +84,23 @@ public class PracticeTest {
         assertEquals(0, actual);
     }
     @Test
+    void testlongerAndShorterLongerIsMoreThanShorter() {
+        // Arrange
+        HashSet<String> words = new HashSet<>();
+        words.add("apple");
+        words.add("blue");
+        words.add("crow");
+        int n = 10;
+        int m =1;
+
+        // Act
+        int actual = Practice.longerAndShorter(words, n, m);
+
+        // Assert
+        // no word can be larger than 10 and smaller than 1, 0
+        assertEquals(0, actual);
+    }
+    @Test
     void testoddEvenDifPositiveNegativeNumbers() {
         // Arrange
         HashMap<Character,Integer> nums = new HashMap<>();
@@ -68,8 +113,24 @@ public class PracticeTest {
         int actual = Practice.oddEvenDif(nums);
 
         // Assert
-        // even = 2 (9,-2) odd = 2 (9,-5) 2-2 = 0
+        // even = 2 (8,-2) odd = 2 (9,-5) 2-2 = 0
         assertEquals(0, actual);
+    }
+    @Test
+    void testoddEvenDifNoOdd() {
+        // Arrange
+        HashMap<Character,Integer> nums = new HashMap<>();
+        nums.put('a', 8);
+        nums.put('b', -2);
+        nums.put('c', 10);
+        nums.put('d', -4);
+
+        // Act
+        int actual = Practice.oddEvenDif(nums);
+
+        // Assert
+        // even = 4 (8,-2, 10, -4) odd = 0, 4-0 = 4
+        assertEquals(4, actual);
     }
     @Test
     void testsecondLargestNegativeAndPositiveKeys() {
@@ -86,6 +147,19 @@ public class PracticeTest {
         // Assert
         // Largest: 9, secondLargest: 8, 8
         assertEquals(8, actual);
+    }
+    @Test
+    void testsecondLargestOneElement() {
+        // Arrange
+        HashMap<Integer, String> nums = new HashMap<>();
+        nums.put(8, "apple");
+
+        // Act
+        int actual = Practice.secondLargest(nums);
+
+        // Assert
+        // Largest: 8, secondLargest: 0, 0
+        assertEquals(0, actual);
     }
     
 

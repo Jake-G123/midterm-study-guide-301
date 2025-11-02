@@ -36,8 +36,8 @@ public class Practice {
     /**
      * Finds the longest word that starts with a specific character letter in the ArrayList.
      * 
-     * @param words a non-empty, non-null array list of Strings
-     * @param letter the non-null specific starting letter to sort by
+     * @param words a non-empty, non-null, lowercase array list of Strings
+     * @param letter the non-null, lowercase starting letter to sort by
      * @return longest word that starts with specified character
      */
     public static String longestWord(ArrayList<String> words, char letter) {
